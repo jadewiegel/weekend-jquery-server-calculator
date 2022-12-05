@@ -39,8 +39,10 @@ function getNumbers(){
 }
 
 function appendToDom(equationsArray){
-    $('#displayTotal').empty();
+    // $('#displayTotal').empty();
+    // $('#displayTotal').append();
+    $('#runningHistory').empty();
     for(i=0; i<equationsArray.length; i++){
-        $('#displayTotal').append(`<li>${equationsArray[i]}</li>`);
+        $('#runningHistory').append(`<li>${equationsArray[i]}</li>`);
     }
 }

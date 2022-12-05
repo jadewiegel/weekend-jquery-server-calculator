@@ -1,4 +1,5 @@
 let calculationList = [];
+let total = 0;
 
 let calculatorProcess = {
     calculationList: calculationList,
@@ -6,6 +7,18 @@ let calculatorProcess = {
         if(equation.includes('+')){
             let numArray = equation.split('+');
             doMath(numArray[0], '+', numArray[1]);
+        }
+        if(equation.includes('-')){
+            let numArray = equation.split('-');
+            doMath(numArray[0], '-', numArray[1]);
+        }
+        if(equation.includes('*')){
+            let numArray = equation.split('*');
+            doMath(numArray[0], '*', numArray[1]);
+        }
+        if(equation.includes('/')){
+            let numArray = equation.split('/');
+            doMath(numArray[0], '/', numArray[1]);
         }
     },
 
@@ -18,6 +31,15 @@ function doMath(num1, operator, num2){
     //if statements for math
     if (operator == '+'){
         calculationList.push(`${firstNum} + ${secondNum} = ${firstNum + secondNum}`);
+    }
+    if (operator == '-'){
+        calculationList.push(`${firstNum} - ${secondNum} = ${firstNum - secondNum}`);
+    }
+    if (operator == '*'){
+        calculationList.push(`${firstNum} * ${secondNum} = ${firstNum * secondNum}`);
+    }
+    if (operator == '/'){
+        calculationList.push(`${firstNum} / ${secondNum} = ${firstNum / secondNum}`);
     }
 }
 
