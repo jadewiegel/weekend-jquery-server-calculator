@@ -9,22 +9,26 @@
     <title>Server Calculator</title>
 </head>
 <body>
-    <h1>Server Side Calculator</h1>
-    <input class="text" id="input1" placeholder="Enter a Number"> 
-    <button id="additionBtn">+</button> 
-    <button id="subtractBtn">-</button> 
-    <button id="multiplyBtn">*</button> 
-    <button id="divideBtn">/</button> 
-    <input class="text" id="input2" placeholder="Enter a Number">
-    <button id="equalBtn">=</button>
-    <button id="clearBtn">C</button>
+    <div id="calcInfo">
+        <h1>Server Side Calculator</h1>
+        <input class="number" id="input1" placeholder="Enter a Number"> 
+        <button class="oppBtn" data-operator="+">+</button> 
+        <button class="oppBtn" data-operator="-">-</button> 
+        <button class="oppBtn" data-operator="*">*</button> 
+        <button class="oppBtn" data-operator="/">/</button> 
+        <input class="number" id="input2" placeholder="Enter a Number">
+        <button id="equalBtn">=</button>
+        <button id="clearBtn">C</button>
+    </div>
 
-    <div id="diplayTotal">
-        <h2></h2>
+    <h2>Eventual Total</h2>
+    <div>
+        <ul id="displayTotal">
+        </ul>
     </div>
 
     <div id="runningHistory">
-        <h3></h3>
+        <h3>Eventual History</h3>
     </div>
 </body>
 </html>
