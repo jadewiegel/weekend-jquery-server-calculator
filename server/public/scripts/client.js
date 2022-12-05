@@ -7,6 +7,7 @@ function onReady(){
     console.log("in onReady");
     $('#equalBtn').on('click', submitNumbers)
     $('.oppBtn[data-operator]').on('click', oppFunction)
+    $('#clearBtn').on('click', clearNumbers)
 }
 
 function oppFunction(){
@@ -24,6 +25,8 @@ function submitNumbers(){
             equation: $('#input1').val() + holdArray[0] + $('#input2').val(),
         }
     }).then(function(response){
+        $('#input1').val('');
+        $('#input2').val('');
         getNumbers();
     })
 }
@@ -45,4 +48,15 @@ function appendToDom(equationsArray){
     for(i=0; i<equationsArray.length; i++){
         $('#runningHistory').append(`<li>${equationsArray[i]}</li>`);
     }
+}
+
+function clearNumbers(){
+    console.log('insice clearNumbers');
+    $.ajax({
+        method: "DELETE",
+        url: "/calculations",
+    }).then(function(repsonse){
+        $('#input1').val('');
+        $('#input2').val('');
+    })
 }

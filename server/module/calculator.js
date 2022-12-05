@@ -1,5 +1,4 @@
 let calculationList = [];
-let total = 0;
 
 let calculatorProcess = {
     calculationList: calculationList,
@@ -21,6 +20,7 @@ let calculatorProcess = {
             doMath(numArray[0], '/', numArray[1]);
         }
     },
+    
 
 }
 function doMath(num1, operator, num2){

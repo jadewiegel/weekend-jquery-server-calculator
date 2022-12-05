@@ -22,3 +22,5 @@ app.post('/calculations', function(req, res){
     calculatorProcess.doEquation(req.body.equation);
     res.sendStatus(201); 
 })
+
+
