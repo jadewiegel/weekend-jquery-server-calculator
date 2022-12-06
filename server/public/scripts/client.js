@@ -25,8 +25,6 @@ function submitNumbers(){
             equation: $('#input1').val() + holdArray[0] + $('#input2').val(),
         }
     }).then(function(response){
-        $('#input1').val('');
-        $('#input2').val('');
         getNumbers();
     })
 }
@@ -36,27 +34,27 @@ function getNumbers(){
         method: "GET",
         url: "/calculations",
     }).then(function(response){
-    appendToDom(response)   
+    appendToDom(response.calculationList)   
+    appendTotal(response.calculationTotal)
     console.log(response); 
     })
 }
 
 function appendToDom(equationsArray){
-    // $('#displayTotal').empty();
-    // $('#displayTotal').append();
     $('#runningHistory').empty();
     for(i=0; i<equationsArray.length; i++){
         $('#runningHistory').append(`<li>${equationsArray[i]}</li>`);
     }
 }
 
+function appendTotal(calculationTotal){
+    $('#displayTotal').empty();
+    $('#displayTotal').append(calculationTotal);
+
+}
+
 function clearNumbers(){
-    console.log('insice clearNumbers');
-    $.ajax({
-        method: "DELETE",
-        url: "/calculations",
-    }).then(function(repsonse){
+    console.log('inside clearNumbers');
         $('#input1').val('');
         $('#input2').val('');
-    })
-}
+    }

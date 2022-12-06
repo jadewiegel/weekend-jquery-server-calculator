@@ -14,7 +14,7 @@ app.listen(PORT, () => {
 
 app.get('/calculations', function(req, res){
     console.log('GET request was made');
-    res.send(calculatorProcess.calculationList)
+    res.send(calculatorProcess)
 })
 
 app.post('/calculations', function(req, res){
@@ -22,5 +22,4 @@ app.post('/calculations', function(req, res){
     calculatorProcess.doEquation(req.body.equation);
     res.sendStatus(201); 
 })
-
 
